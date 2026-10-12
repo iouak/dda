@@ -1,0 +1,13 @@
+services:
+  decision-drift-lab:
+    build: .
+    ports:
+      - "127.0.0.1:8765:8765"
+    environment:
+      PUBLIC_READ_ONLY: "false"
+      REQUIRE_USER_KEYS: "true"
+      RATE_LIMIT_PER_HOUR: "90"
+      GITHUB_REPO_URL: ""
+      HOST: "0.0.0.0"
+      PORT: "8765"
+    restart: unless-stopped
