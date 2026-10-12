@@ -1,4 +1,4 @@
-# Decision Drift Lab v17 — Coolify / Local installation
+# Decision Drift Lab v17 
 
 ## What visitors can do
 
@@ -6,17 +6,14 @@ Browse the research report at `/report`, archived results at `/results`, experim
 
 **Credential warning:** The server receives each submitted key and relays it to the corresponding provider. Its operator could inspect those keys. For maximum control, fork and run locally rather than supplying a key to an untrusted hosted service. Browser keys use session storage and are not intentionally included in exported JSON.
 
-## Deploy on Coolify
+This app can be deployed on on Docker
 
-1. Push the contents of this ZIP to the root of your GitHub repository, including `Dockerfile`, `server.py`, the HTML files, JSON inputs and `archived-results/`. Never commit keys or `.env`.
-2. Coolify → New Resource → Application → GitHub repository; build pack **Dockerfile**; base directory `/`; Dockerfile `/Dockerfile`; container port **8765**. Add your HTTPS domain and deploy.
-3. Set Coolify environment variables:
 
 ```env
 PUBLIC_READ_ONLY=false
 REQUIRE_USER_KEYS=true
 RATE_LIMIT_PER_HOUR=90
-GITHUB_REPO_URL=https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY
+GITHUB_REPO_URL=https://github.com/iouak/dda
 ```
 
 `GITHUB_REPO_URL` is **configuration**, not a real repository link until replaced. When configured, the site displays a **Fork on GitHub** link. Users can fork using GitHub’s UI, clone, and run locally with `python server.py` or `docker compose up --build`. Repo must be public for arbitrary visitors to fork it.
