@@ -1,4 +1,4 @@
-# Decision Drift Lab — Clean Coolify package (v19)
+# Decision Drift Lab 
 
 This is the deployable repository root. There is **no nested application**.
 
@@ -20,4 +20,6 @@ Python: `python server.py`
 
 Visit `http://localhost:8765`, `/results`, and `/report`.
 
-For Coolify, select Dockerfile build, base directory `/`, port `8765`. Configure `GITHUB_REPO_URL` for Fork on GitHub. The public BYOK setting is `PUBLIC_READ_ONLY=false` and `REQUIRE_USER_KEYS=true`; in this mode, users' API credentials transit the hosted server. See `README-DEPLOY.md` for security cautions.
+For Docker deployment, select Dockerfile build, base directory `/`, port `8765`. Configure `GITHUB_REPO_URL` for Fork on GitHub. 
+The public BYOK setting is `PUBLIC_READ_ONLY=false` and `REQUIRE_USER_KEYS=true`; in this mode, users' API credentials transit the hosted server. 
+See `README-DEPLOY.md` for security cautions.
